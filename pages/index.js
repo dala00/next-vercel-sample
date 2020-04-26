@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
 
 export default function Home() {
   return (
@@ -10,7 +12,10 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to{' '}
+          <a href="https://nextjs.org">
+            Next.js! {publicRuntimeConfig.TEST_TEXT}
+          </a>
         </h1>
 
         <p className="description">
